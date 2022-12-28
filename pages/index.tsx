@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react';
 import { Countries } from './interface/Countries';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import { faMoon, faSun, faMagnifyingGlass, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -27,14 +27,33 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
       </Head>
-      <main>
-        <header>
-          <h1>Where in the world?</h1>
-          <div className={styles.darkMode}>
-            <FontAwesomeIcon icon={faMoon} fixedWidth />
-            <p>Dark Mode</p>
+      <header>
+        <h1>Where in the world?</h1>
+        <div className={styles.darkMode}>
+          <FontAwesomeIcon icon={faMoon} fixedWidth />
+          <p>Dark Mode</p>
+        </div>
+      </header>
+      <main className={styles.container}>
+        <div className={styles.filterBox}>
+          <div className={styles.searchbar}>
+            <FontAwesomeIcon icon={faMagnifyingGlass} fixedWidth />
+            <input type="text" placeholder='Search for a country...' />
           </div>
-        </header>
+          <div className={styles.dropdown}>
+            <div className={styles.filter}>
+              <p>Filter by Region</p>
+              <FontAwesomeIcon icon={faChevronDown} fixedWidth />
+            </div>
+            <div className={styles.dropdownContent}>
+              <span>Africa</span>
+              <span>America</span>
+              <span>Asia</span>
+              <span>Europe</span>
+              <span>Oceania</span>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   )
