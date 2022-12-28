@@ -67,6 +67,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
+  cursor: pointer;
 }
 .filter p {
   margin-right: 47px;
@@ -86,4 +87,57 @@
 }
 .dropdownContent span {
   margin-bottom: 8px;
+  cursor: pointer;
+}
+
+/* Cards container */
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 48px;
+}
+.card {
+  width: 264px;
+  min-height: 336px;
+  background-color: #FFFFFF;
+  margin-right: 75px;
+  margin-bottom: 75px;
+  border-radius: 5px;
+}
+.card img {
+  border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.card .text {
+  padding: 24px 16px 46px 24px;
+}
+.card .text h3 {
+  margin-bottom: 16px;
+}
+.card .text p {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 300;
+  margin-top: 8px;
+}
+.card .text span {
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 480px) {
+  .darkMode {
+    font-size: 12px;
+    line-height: 16.37px;
+  }
+  .filterBox {
+    flex-direction: column;
+  }
+  .dropdown {
+    margin-top: 40px;
+  }
+  .card {
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
 }
