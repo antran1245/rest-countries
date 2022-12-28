@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
 html,
 body {
   padding: 0;
@@ -16,7 +17,6 @@ a {
 }
 
 header {
-  background-color: #FFFFFF;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,12 +41,19 @@ h1, h3, p {
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
   body {
     color: #111517;
     background: #F2F2F2;
+  }
+  body header {
+    background-color: #FFFFFF;
+  }
+  body.light {
+    color: #FFFFFF;
+    background: #202C36;
+  }
+  body.light header {
+    background-color: #2B3844;
   }
 }
 

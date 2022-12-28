@@ -32,7 +32,6 @@
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: #FFFFFF;
   border-radius: 5px;
   padding-left: 32px;
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
@@ -41,7 +40,6 @@
   margin-left: 24px;
   background-color: transparent;
   border: none;
-  color: #111517;
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
@@ -54,10 +52,10 @@
 .dropdown {
   max-width: fit-content;
   position: relative;
+  margin-right: 75px;
 }
 .filter {
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
-  background-color: #FFFFFF;
   border-radius: 5px;
   width: 100%;
   display: flex;
@@ -74,8 +72,6 @@
 }
 .dropdownContent {
   position: absolute;
-  /* display: none; */
-  background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -94,16 +90,16 @@
 .cardContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 48px;
 }
 .card {
   width: 264px;
   min-height: 336px;
-  background-color: #FFFFFF;
   margin-right: 75px;
   margin-bottom: 75px;
   border-radius: 5px;
+  box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.0294384);
 }
 .card img {
   border-top-right-radius: 5px;
