@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Country } from './interface/Country';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun, faMagnifyingGlass, faChevronDown } from '@fortawesome/free-solid-svg-icons';
@@ -23,6 +23,12 @@ export default function Home() {
     fetchTodos().catch(console.error)
   }, [])
 
+  /**
+   * Select the region then call the API that will only return the
+   * selected region.
+   * 
+   * @param region -> string of the region
+   */
   const filterByRegion = async (region: string) => {
     const response = await fetch("/api/countries", {
       method: 'POST',
@@ -32,6 +38,9 @@ export default function Home() {
     setCountries(data)
   }
 
+  /**
+   * Turn on and off the dark mode of the page.
+   */
   const mode = () => {
     let preferMode = window.matchMedia("(prefers-color-scheme: dark)")
     setToggle(!toggle)
@@ -40,6 +49,20 @@ export default function Home() {
     } else {
       document.body.classList.toggle("dark")
     }
+  }
+
+  /**
+   * Call the API on every change of search bar
+   * 
+   * @param e : onchange of search input
+   */
+  const searching = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const response = await fetch("/api/countries", {
+      method: 'POST',
+      body: JSON.stringify({ url: `/v3.1/name/${e.target.value}` })
+    })
+    const data = await response.json();
+    setCountries(data)
   }
   return (
     <div>
@@ -56,8 +79,12 @@ export default function Home() {
       <header>
         <h1>Where in the world?</h1>
         <div className={styles.darkMode} onClick={() => mode()}>
-          <FontAwesomeIcon icon={faMoon} fixedWidth />
-          <p>Dark Mode</p>
+          {
+            toggle ?
+              <FontAwesomeIcon icon={faSun} fixedWidth /> :
+              <FontAwesomeIcon icon={faMoon} fixedWidth />
+          }
+          <p>{toggle ? 'Light Mode' : 'Dark Mode'}</p>
         </div>
       </header>
 
@@ -72,7 +99,7 @@ export default function Home() {
         <div className={styles.filterBox}>
           <div className={styles.searchbar} style={{ backgroundColor: `${toggle ? '#2B3844' : '#FFFFFF'}` }}>
             <FontAwesomeIcon icon={faMagnifyingGlass} fixedWidth />
-            <input type="text" placeholder='Search for a country...' style={{ color: `${toggle ? '#FFFFFF' : '#111517'}` }} />
+            <input type="text" placeholder='Search for a country...' style={{ color: `${toggle ? '#FFFFFF' : '#111517'}` }} onChange={(e) => searching(e)} />
           </div>
           <div className={styles.dropdown}>
             <div className={styles.filter} onClick={() => setShowFilter(!showFilter)} style={{ backgroundColor: `${toggle ? '#2B3844' : '#FFFFFF'}` }}>
