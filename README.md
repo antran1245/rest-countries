@@ -8,6 +8,7 @@ Pull all the data and show individual country. Display that flags that correlate
 
 - Next.js
 - TypeScript
+- FontAwesome
 
 # Credit
 
