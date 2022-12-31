@@ -1,5 +1,5 @@
 import React from 'react';
-import Country from './interface/Country';
+import { Country } from '../interface/Country';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/Detail.module.css'

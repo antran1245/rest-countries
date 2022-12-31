@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import React, { useEffect, useState } from 'react';
-import Country from './interface/Country';
+import { Country } from '../interface/Country';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/Home.module.css'
-import ListingCountries from './listingCountries';
-import DetailPage from './detailPage';
+import ListingCountries from '../components/listingCountries';
+import DetailPage from '../components/detailPage';
 
 export default function Home() {
   const [countries, setCountries] = useState<Country[] | []>([])
