@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import React, { useEffect, useState } from 'react';
-import { Country } from './interface/Country';
+import Country from './interface/Country';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/Home.module.css'

@@ -1,5 +1,5 @@
-import { Country } from "./Country";
+import Country from "./Country";
 
-export interface Countries extends Country {
+export default interface Countries extends Country {
   
 }[]

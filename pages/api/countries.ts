@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { Countries } from "../interface/Countries";
+import Countries from "../interface/Countries";
 
 export default async function countries(req : NextApiRequest, res : NextApiResponse<Countries>) {
   const {url} = JSON.parse(req.body)
