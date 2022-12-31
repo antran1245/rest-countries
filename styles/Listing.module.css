@@ -83,6 +83,8 @@
   cursor: pointer;
 }
 .card img {
+  max-width: 264px;
+  max-height: 160px;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
 }

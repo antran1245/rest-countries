@@ -3,6 +3,7 @@ import { Country } from './interface/Country';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/Detail.module.css'
+import Image from 'next/image';
 
 interface DetailPageProps {
   setSelected: React.Dispatch<React.SetStateAction<Country | null>>
@@ -18,7 +19,8 @@ export default function DetailPage({ setSelected, selected, toggle }: DetailPage
         <p>Back</p>
       </div>
       <div className={styles.flagContainer}>
-        <img src={selected.flags.png} alt={selected.name.common} />
+        <Image
+          src={selected.flags.png} alt={selected.name.common} width={1000} height={1000} />
         <div className={styles.content}>
           <h2>{selected.name.common}</h2>
           <div className={styles.info}>

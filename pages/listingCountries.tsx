@@ -3,6 +3,7 @@ import { Country } from './interface/Country';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/Listing.module.css'
+import Image from 'next/image';
 
 interface ListingCountriesProps {
   setCountries: React.Dispatch<React.SetStateAction<Country[] | []>>;
@@ -88,7 +89,7 @@ export default function ListingCountries({ setCountries, countries, toggle, setS
           countries.length > 0 ?
             countries.map((item: Country, index: number) => {
               return <div className={styles.card} key={index} style={{ backgroundColor: `${toggle ? '#2B3844' : '#FFFFFF'}` }} onClick={() => setSelected(item)}>
-                <img src={item.flags.png} alt="flag" width={'100%'} height={'50%'} />
+                <Image src={item.flags.png} alt="flag" width={1000} height={1000} />
                 <div className={styles.text}>
                   <h3>{item.name.common}</h3>
                   <p><span>Population:</span> {item.population.toLocaleString('en-us')}</p>
