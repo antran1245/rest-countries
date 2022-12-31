@@ -36,12 +36,18 @@ export default function DetailPage({ setSelected, selected, toggle }: DetailPage
             </div>
           </div>
           <div className={styles.border}>
-            <b>Border Countries:</b>
             {
-              selected.borders.map((item: string, index: number) => {
-                return <div key={index} className={styles.borderBox}>{item}</div>
-              })
+              selected && selected.borders ?
+                <b>Border Countries:</b> : null
             }
+            <div>
+              {
+                selected && selected.borders ?
+                  selected.borders.map((item: string, index: number) => {
+                    return <div key={index} className={styles.borderBox} style={{ backgroundColor: `${toggle ? '#2B3844' : '#FFFFFF'}` }}>{item}</div>
+                  }) : null
+              }
+            </div>
           </div>
         </div>
       </div>

@@ -76,7 +76,7 @@
 .card {
   width: 264px;
   min-height: 336px;
-  margin-right: 75px;
+  margin-right: 4vw;
   margin-bottom: 75px;
   border-radius: 5px;
   box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.0294384);
@@ -84,7 +84,7 @@
 }
 .card img {
   border-top-right-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 .card .text {
   padding: 24px 16px 46px 24px;
@@ -108,6 +108,9 @@
   }
   .dropdown {
     margin-top: 40px;
+  }
+  .cardContainer {
+    justify-content: center;
   }
   .card {
     margin-right: 0;
