@@ -5,10 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/Home.module.css'
 import ListingCountries from './listingCountries';
+import DetailPage from './detailPage';
 
 export default function Home() {
   const [countries, setCountries] = useState<Country[] | []>([])
   const [toggle, setToggle] = useState<boolean>(false)
+  const [selected, setSelected] = useState<Country | null>(null)
 
   // Getting all the data from the REST Countries API
   useEffect(() => {
@@ -64,7 +66,11 @@ export default function Home() {
         Display the countries
       */}
       <main className={styles.container}>
-        <ListingCountries setCountries={setCountries} countries={countries} toggle={toggle} />
+        {
+          selected ?
+            <DetailPage setSelected={setSelected} selected={selected} toggle={toggle} /> :
+            <ListingCountries setCountries={setCountries} countries={countries} toggle={toggle} setSelected={setSelected} />
+        }
 
       </main>
     </div>

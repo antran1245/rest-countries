@@ -1,0 +1,49 @@
+/* Back button */
+.back {
+  display: flex;
+  width: fit-content;
+  cursor: pointer;
+  padding-left: 32px;
+}
+.back p {
+  margin-left: 10px;
+}
+
+/* content */
+.flagContainer {
+  margin-top: 80px;
+  display: flex;
+}
+.flagContainer img {
+  width: 560px;
+  height: 401px;
+  border-radius: 10.01px;
+}
+
+/* information */
+.content {
+  padding-left: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+}
+.content h2 {
+  font-size: 32px;
+  line-height: 43.65px;
+  font-weight: 800;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.info p {
+  margin-bottom: 2px;
+  font-size: 16px;
+  line-height: 32px;
+}
+.border {
+  display: flex;
+  margin-top: 68px;
+}

@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import { Country } from './interface/Country';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Listing.module.css'
 
 interface ListingCountriesProps {
   setCountries: React.Dispatch<React.SetStateAction<Country[] | []>>;
   countries: Country[];
   toggle: boolean;
+  setSelected: React.Dispatch<React.SetStateAction<Country | null>>;
 }
 
-export default function ListingCountries({ setCountries, countries, toggle }: ListingCountriesProps) {
+export default function ListingCountries({ setCountries, countries, toggle, setSelected }: ListingCountriesProps) {
   const [showFilter, setShowFilter] = useState<boolean>(false)
 
   /**
@@ -86,10 +87,10 @@ export default function ListingCountries({ setCountries, countries, toggle }: Li
         {
           countries.length > 0 ?
             countries.map((item: Country, index: number) => {
-              return <div className={styles.card} key={index} style={{ backgroundColor: `${toggle ? '#2B3844' : '#FFFFFF'}` }}>
+              return <div className={styles.card} key={index} style={{ backgroundColor: `${toggle ? '#2B3844' : '#FFFFFF'}` }} onClick={() => setSelected(item)}>
                 <img src={item.flags.png} alt="flag" width={'100%'} height={'50%'} />
                 <div className={styles.text}>
-                  <h3>{item.name.official}</h3>
+                  <h3>{item.name.common}</h3>
                   <p><span>Population:</span> {item.population.toLocaleString('en-us')}</p>
                   <p><span>Region:</span> {item.region}</p>
                   <p><span>Capital:</span> {item.capital}</p>

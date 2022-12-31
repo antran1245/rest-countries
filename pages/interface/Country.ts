@@ -2,7 +2,7 @@ export interface Country {
   name: {
     common: string;
     official: string;
-    native: {
+    nativeName: {
       bar: {
         official: string;
         common: string;
