@@ -89,7 +89,7 @@ export default function ListingCountries({ setCountries, countries, toggle, setS
           countries.length > 0 ?
             countries.map((item: Country, index: number) => {
               return <div className={styles.card} key={index} style={{ backgroundColor: `${toggle ? '#2B3844' : '#FFFFFF'}` }} onClick={() => setSelected(item)}>
-                <Image src={item.flags.png} alt="flag" width={1000} height={1000} priority />
+                <Image src={item.flags.png} alt="flag" width={1000} height={1000} />
                 <div className={styles.text}>
                   <h3>{item.name.common}</h3>
                   <p><span>Population:</span> {item.population.toLocaleString('en-us')}</p>

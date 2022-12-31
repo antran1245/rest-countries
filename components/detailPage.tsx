@@ -20,7 +20,7 @@ export default function DetailPage({ setSelected, selected, toggle }: DetailPage
       </div>
       <div className={styles.flagContainer}>
         <Image
-          src={selected.flags.png} alt={selected.name.common} width={1000} height={1000} priority />
+          src={selected.flags.png} alt={selected.name.common} width={1000} height={1000} />
         <div className={styles.content}>
           <h2>{selected.name.common}</h2>
           <div className={styles.info}>
